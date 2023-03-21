@@ -11,14 +11,19 @@ const BookList = () => (
   </section>
 );
 
-const Book = () => (
-  <article className="book">
-    <Image />
-    <Title />
-    <Author />
-  </article>
-);
+const Book = () => {
+  const title = "Atomic Habits";
+  const author = "James Clear";
+  return (
+    <article className="book">
+      <img src="./images/book-1.jpg" alt={title} />
+      <h2>{title}</h2>
+      <h4>{author}</h4>
+    </article>
+  );
+};
 
+/*
 const Image = () => <img src="./images/book-1.jpg" alt="Atomic Habits" />;
 const Title = () => <h2>Atomic Habits</h2>;
 const Author = () => {
@@ -29,6 +34,7 @@ const Author = () => {
   };
   return <h4 style={inlineHeadingStyles}>James Clear</h4>;
 };
+*/
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
