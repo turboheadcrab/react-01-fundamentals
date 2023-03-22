@@ -26,38 +26,34 @@ const BookList = () => (
   </section>
 );
 
-const EventExamples = () => {
-  const handleFormInput = (e) => {
-    // console.log(e);
-    console.log(e.target);
-    console.log(e.target.name);
-    console.log(e.target.value);
-  };
-  const handleButtonClick = () => {
-    alert("handle button click");
-  };
-  const handleFormSubmission = (e) => {
-    e.preventDefault();
-    console.log("form submitted");
-  };
-  return (
-    <section>
-      <form onSubmit={handleFormSubmission}>
-        <h2>Typical Form</h2>
-        <input
-          type="text"
-          name="example"
-          onChange={handleFormInput}
-          style={{ margin: "1rem 0" }}
-        />
-        <button type="submit">submit</button>
-        <div>
-          <button onClick={handleButtonClick}>click me</button>
-        </div>
-      </form>
-    </section>
-  );
-};
+const EventExamples = () => (
+  <section>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        console.log("form submitted");
+      }}
+    >
+      <h2>Typical Form</h2>
+      <input
+        type="text"
+        name="example"
+        onChange={(e) => {
+          console.log(e);
+          // e.target - element
+          console.log(`Input Name : ${e.target.name}`);
+          console.log(`Input Value : ${e.target.value}`);
+          // console.log('handle form input');
+        }}
+        style={{ margin: "1rem 0" }}
+      />
+      <button type="submit">submit</button>
+      <div>
+        <button onClick={() => alert("handle button click")}>click me</button>
+      </div>
+    </form>
+  </section>
+);
 
 const Book = (props) => {
   const { img, title, author } = props;
