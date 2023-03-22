@@ -2,30 +2,26 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
-const firstBook = {
-  author: "James Clear",
-  title: "Atomic Habits",
-  img: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/81bGKUa1e0L.jpg",
-};
+const books = [
+  {
+    author: "James Clear",
+    title: "Atomic Habits",
+    img: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/81bGKUa1e0L.jpg",
+  },
+  {
+    author: "Karl Marx",
+    title: "Das Kapital",
+    img: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/41mfCeuOk1L.jpg",
+  },
+];
 
-const secondBook = {
-  author: "Karl Marx",
-  title: "Das Kapital",
-  img: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/41mfCeuOk1L.jpg",
-};
+const names = ["john", "peter", "susan"];
 
 const BookList = () => (
   <section className="booklist">
-    <Book
-      author={firstBook.author}
-      title={firstBook.title}
-      img={firstBook.img}
-    />
-    <Book
-      author={secondBook.author}
-      title={secondBook.title}
-      img={secondBook.img}
-    />
+    {names.map((name) => (
+      <h1>{name}</h1>
+    ))}
   </section>
 );
 
