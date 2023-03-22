@@ -2,14 +2,30 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
-const title = "Atomic Habits";
-const author = "James Clear";
-const img = "./images/book-1.jpg";
+const firstBook = {
+  author: "James Clear",
+  title: "Atomic Habits",
+  img: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/81bGKUa1e0L.jpg",
+};
+
+const secondBook = {
+  author: "Karl Marx",
+  title: "Das Kapital",
+  img: "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/41mfCeuOk1L.jpg",
+};
 
 const BookList = () => (
   <section className="booklist">
-    <Book author={author} title={title} img={img} />
-    <Book author={author} title={title} img={img} />
+    <Book
+      author={firstBook.author}
+      title={firstBook.title}
+      img={firstBook.img}
+    />
+    <Book
+      author={secondBook.author}
+      title={secondBook.title}
+      img={secondBook.img}
+    />
   </section>
 );
 
@@ -24,19 +40,6 @@ const Book = (props) => {
     </article>
   );
 };
-
-/*
-const Image = () => <img src="./images/book-1.jpg" alt="Atomic Habits" />;
-const Title = () => <h2>Atomic Habits</h2>;
-const Author = () => {
-  const inlineHeadingStyles = {
-    color: "#617d98",
-    fontSize: "0.75rem",
-    marginTop: "0.5rem",
-  };
-  return <h4 style={inlineHeadingStyles}>James Clear</h4>;
-};
-*/
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
