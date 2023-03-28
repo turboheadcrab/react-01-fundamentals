@@ -13,5 +13,9 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "prettier"],
-  rules: { "prettier/prettier": "error" },
+  rules: {
+    "prettier/prettier": "error",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-uses-react": "error",
+  },
 };
